@@ -1,0 +1,439 @@
+/* ==========================
+   GOOGLE THEME
+========================== */
+
+:root{
+
+    --bg:#12082F;
+    --bg2:#24125D;
+    --bg3:#38217D;
+
+    --pink:#FF8FC7;
+    --pink-light:#FFB6D9;
+
+    --lav:#CDB4FF;
+
+    --gold:#FFD166;
+
+    --white:#FFFFFF;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    overflow:hidden;
+
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+    font-family:"Poppins",sans-serif;
+
+    background:
+    linear-gradient(
+        180deg,
+        var(--bg),
+        var(--bg2),
+        var(--bg3)
+    );
+
+}
+
+/* ==========================
+      BACKGROUND GLOWS
+========================== */
+
+.glow{
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.22;
+
+}
+
+.glow-left{
+
+    background:#ff79b6;
+
+    left:-220px;
+    bottom:-220px;
+
+}
+
+.glow-right{
+
+    background:#8a67ff;
+
+    right:-220px;
+    top:-220px;
+
+}
+
+/* ==========================
+          MOON
+========================== */
+
+.moon{
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    right:80px;
+    top:70px;
+
+    border-radius:50%;
+
+    background:#fff7d4;
+
+    box-shadow:
+
+        0 0 30px rgba(255,209,102,.6),
+
+        0 0 70px rgba(255,209,102,.35);
+
+    animation:moonFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes moonFloat{
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+/* ==========================
+        STAR LAYER
+========================== */
+
+#stars{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+.star{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:twinkle infinite;
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.2;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+}
+
+/* ==========================
+     SHOOTING STARS
+========================== */
+
+#shooting-stars{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.shooting-star{
+
+    position:absolute;
+
+    width:140px;
+
+    height:2px;
+
+    background:
+
+    linear-gradient(
+        to right,
+        white,
+        transparent
+    );
+
+    transform:rotate(-35deg);
+
+    opacity:0;
+
+}
+
+/* ==========================
+          HEARTS
+========================== */
+
+#hearts{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    user-select:none;
+
+    text-shadow:
+
+    0 0 12px rgba(255,182,217,.4);
+
+}
+
+/* ==========================
+        HERO CARD
+========================== */
+
+.hero{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(90%,650px);
+
+    text-align:center;
+
+    padding:50px;
+
+}
+
+.subtitle{
+
+    color:var(--lav);
+
+    letter-spacing:5px;
+
+    font-size:.85rem;
+
+    margin-bottom:18px;
+
+}
+
+.title{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:clamp(4rem,10vw,7rem);
+
+    line-height:.95;
+
+    color:white;
+
+    text-shadow:
+
+    0 0 10px #ff90c6,
+
+    0 0 20px #ff90c6,
+
+    0 0 45px rgba(255,144,198,.75),
+
+    0 0 80px rgba(255,144,198,.45);
+
+}
+
+.love{
+
+    margin-top:18px;
+
+    color:var(--pink-light);
+
+    font-size:2rem;
+
+    font-weight:600;
+
+}
+
+.message{
+
+    color:white;
+
+    opacity:.9;
+
+    line-height:1.9;
+
+    margin-top:28px;
+
+    font-size:1rem;
+
+}
+
+/* ==========================
+        BUTTON
+========================== */
+
+.gift-btn{
+
+    margin-top:45px;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    border-radius:999px;
+
+    padding:18px 45px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--pink),
+        var(--lav)
+    );
+
+    box-shadow:
+
+    0 10px 35px rgba(255,143,199,.35);
+
+    transition:.35s;
+
+}
+
+.gift-btn:hover{
+
+    transform:
+
+    translateY(-4px)
+
+    scale(1.03);
+
+    box-shadow:
+
+    0 0 35px rgba(255,209,102,.5);
+
+}
+
+/* ==========================
+      ENTRANCE ANIMATION
+========================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:fadeUp .9s forwards;
+
+}
+
+.delay1{animation-delay:.3s;}
+.delay2{animation-delay:.8s;}
+.delay3{animation-delay:1.5s;}
+.delay4{animation-delay:2.2s;}
+.delay5{animation-delay:3s;}
+
+@keyframes fadeUp{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================
+       RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+.hero{
+
+padding:25px;
+
+}
+
+.title{
+
+font-size:4.5rem;
+
+}
+
+.love{
+
+font-size:1.6rem;
+
+}
+
+.message{
+
+font-size:.95rem;
+
+}
+
+.moon{
+
+width:80px;
+height:80px;
+
+right:25px;
+top:30px;
+
+}
+
+}
