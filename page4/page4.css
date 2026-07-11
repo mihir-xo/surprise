@@ -1,0 +1,462 @@
+/* ==========================================
+                THEME
+========================================== */
+
+:root{
+
+    --bg1:#14082F;
+    --bg2:#25115A;
+    --bg3:#3B237E;
+
+    --pink:#FF8FC7;
+    --lav:#CDB4FF;
+    --gold:#FFD166;
+    --white:#FFFFFF;
+
+}
+
+/* ==========================================
+                RESET
+========================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html,
+body{
+
+    width:100%;
+    min-height:100%;
+
+}
+
+body{
+
+    min-height:100dvh;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+    font-family:"Poppins",sans-serif;
+
+    background:
+    linear-gradient(
+        180deg,
+        var(--bg1),
+        var(--bg2),
+        var(--bg3)
+    );
+
+}
+
+/* ==========================================
+BACKGROUND
+========================================== */
+
+#stars,
+#hearts,
+#shooting-stars,
+#fireworks{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+#fireworks{
+
+    width:100%;
+    height:100%;
+
+}
+
+/* ==========================================
+STARS
+========================================== */
+
+.star{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:twinkle linear infinite;
+
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+
+        opacity:.2;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================
+HEARTS
+========================================== */
+
+.heart{
+
+    position:absolute;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    text-shadow:
+        0 0 12px rgba(255,180,220,.8);
+
+}
+
+/* ==========================================
+SHOOTING STAR
+========================================== */
+
+.shooting-star{
+
+    position:absolute;
+
+    width:140px;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            to right,
+            white,
+            transparent
+        );
+
+    transform:rotate(-35deg);
+
+}
+
+/* ==========================================
+MOON
+========================================== */
+
+.moon{
+
+    position:fixed;
+
+    width:120px;
+    height:120px;
+
+    right:70px;
+    top:60px;
+
+    border-radius:50%;
+
+    background:#FFF6D5;
+
+    box-shadow:
+
+        0 0 40px rgba(255,209,102,.7),
+
+        0 0 90px rgba(255,209,102,.35);
+
+    animation:moonFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes moonFloat{
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* ==========================================
+GLOW
+========================================== */
+
+.glow{
+
+    position:fixed;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.25;
+
+}
+
+.glow-left{
+
+    left:-220px;
+    bottom:-220px;
+
+    background:#ff72b7;
+
+}
+
+.glow-right{
+
+    right:-220px;
+    top:-220px;
+
+    background:#8c6dff;
+
+}
+/* ==========================================
+HERO
+========================================== */
+
+.hero{
+
+    position:relative;
+
+    z-index:20;
+
+    width:min(92vw,700px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================
+TITLE
+========================================== */
+
+.hero h1{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:clamp(3rem,8vw,5rem);
+
+    color:white;
+
+    text-shadow:
+        0 0 20px var(--pink),
+        0 0 45px var(--pink);
+
+    animation:fadeZoom 2s ease;
+
+}
+
+.hero h2{
+
+    margin-top:12px;
+
+    color:var(--pink);
+
+    font-size:clamp(1.4rem,4vw,2rem);
+
+    font-weight:500;
+
+}
+
+.hero p{
+
+    margin:28px 0;
+
+    color:white;
+
+    line-height:1.8;
+
+    font-size:1rem;
+
+    max-width:520px;
+
+}
+
+/* ==========================================
+BUTTON
+========================================== */
+
+#nextBtn{
+
+    margin-top:10px;
+
+    padding:16px 42px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:#2a114f;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--lav)
+        );
+
+    transition:.35s;
+
+    box-shadow:
+        0 10px 30px rgba(255,143,199,.4);
+
+}
+
+#nextBtn:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 0 30px rgba(255,209,102,.8);
+
+}
+
+/* ==========================================
+ANIMATION
+========================================== */
+
+@keyframes fadeZoom{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.75);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .hero{
+
+        width:92%;
+
+        padding:30px 22px;
+
+    }
+
+    .hero p{
+
+        font-size:.95rem;
+
+    }
+
+    .moon{
+
+        width:85px;
+        height:85px;
+
+        top:25px;
+        right:20px;
+
+    }
+
+}
+
+@media(max-width:430px){
+
+    .hero{
+
+        padding:25px 18px;
+
+        border-radius:24px;
+
+    }
+
+    .hero h1{
+
+        font-size:2.8rem;
+
+    }
+
+    .hero h2{
+
+        font-size:1.2rem;
+
+    }
+
+    .hero p{
+
+        font-size:.9rem;
+
+        line-height:1.7;
+
+    }
+
+    #nextBtn{
+
+        width:220px;
+
+        padding:15px;
+
+        font-size:.95rem;
+
+    }
+
+}

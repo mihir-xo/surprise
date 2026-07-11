@@ -1,0 +1,658 @@
+/* ==========================================
+                THEME
+========================================== */
+
+:root{
+
+    --bg1:#14082F;
+    --bg2:#24115B;
+    --bg3:#3A237D;
+
+    --pink:#921553;
+    --pinkLight:#3074b6;
+
+    --lav:#3300aa;
+
+    --gold:#FFD166;
+
+    --white:#ffffff;
+
+}
+
+/* ==========================================
+                RESET
+========================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html,
+body{
+
+    width:100%;
+    min-height:100%;
+
+}
+
+body{
+
+    min-height:100dvh;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+    font-family:"Poppins",sans-serif;
+
+    background:
+    linear-gradient(
+        180deg,
+        var(--bg1),
+        var(--bg2),
+        var(--bg3)
+    );
+
+}
+/* ==========================================
+            BACKGROUND
+========================================== */
+
+#stars,
+#hearts,
+#shooting-stars{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.star{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:twinkle linear infinite;
+
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+
+        opacity:.2;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+}
+
+.heart{
+
+    position:absolute;
+
+    user-select:none;
+
+    text-shadow:
+    0 0 12px rgba(255,180,220,.6);
+
+}
+
+.shooting-star{
+
+    position:absolute;
+
+    width:140px;
+
+    height:2px;
+
+    background:
+    linear-gradient(to right,#fff,transparent);
+
+    transform:rotate(-35deg);
+
+}
+
+/* ==========================================
+                MOON
+========================================== */
+
+.moon{
+
+    position:fixed;
+
+    top:60px;
+    right:70px;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:#FFF7D8;
+
+    box-shadow:
+        0 0 30px rgba(255,209,102,.7),
+        0 0 90px rgba(255,209,102,.25);
+
+    animation:moonFloat 6s ease-in-out infinite;
+
+    z-index:1;
+
+}
+
+@keyframes moonFloat{
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* ==========================================
+                GLOW
+========================================== */
+
+.glow{
+
+    position:fixed;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.25;
+
+    z-index:0;
+
+}
+
+.glow-left{
+
+    left:-220px;
+    bottom:-220px;
+
+    background:#FF77B8;
+
+}
+
+.glow-right{
+
+    right:-220px;
+    top:-220px;
+
+    background:#8D68FF;
+
+}
+/* ==========================================
+              WRAPPER
+========================================== */
+
+.wrapper{
+
+    position:relative;
+
+    z-index:5;
+
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    perspective:2000px;
+
+    padding:20px;
+
+}
+
+/* ==========================================
+             FLIP CARD
+========================================== */
+
+.birthday-card{
+
+    position:relative;
+
+    width:min(92vw,430px);
+
+    height:min(560px,82dvh);
+
+    transform-style:preserve-3d;
+
+    transition:transform 1.2s ease;
+
+}
+
+.birthday-card.flip{
+
+    transform:rotateY(180deg);
+
+}
+
+.card-face{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    backface-visibility:hidden;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+
+}
+/* ==========================================
+            FRONT SIDE
+========================================== */
+
+.card-front{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--pink),
+        var(--lav)
+    );
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:35px;
+
+}
+
+.card-front h1{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:clamp(2.8rem,8vw,4rem);
+
+    margin-bottom:15px;
+
+}
+
+.card-front h2{
+
+    font-weight:500;
+
+    margin-bottom:25px;
+
+}
+
+.card-front p{
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+}
+
+/* ==========================================
+                BUTTON
+========================================== */
+
+#flipBtn{
+
+    padding:16px 42px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:#444;
+
+    background:white;
+
+    transition:.3s;
+
+}
+
+#flipBtn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 25px rgba(255,255,255,.5);
+
+}
+
+/* ==========================================
+            BACK SIDE
+========================================== */
+
+.card-back{
+
+    transform:rotateY(180deg);
+
+    background:#FFFDF9;
+
+    padding:30px;
+
+    overflow-y:auto;
+
+}
+
+.card-back h1{
+
+    text-align:center;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:clamp(2.2rem,7vw,3rem);
+
+    color:#FF6EA7;
+
+    margin-bottom:25px;
+
+}
+
+/* ==========================================
+                LETTER
+========================================== */
+
+#typedText{
+
+    color:#444;
+
+    line-height:1.9;
+
+    white-space:pre-wrap;
+
+    min-height:240px;
+
+}
+
+.poem{
+
+    opacity:0;
+
+    transition:1s;
+
+    margin-top:25px;
+
+    color:#666;
+
+    font-style:italic;
+
+    text-align:center;
+
+    line-height:1.8;
+
+}
+
+.poem.show{
+
+    opacity:1;
+
+}
+
+/* ==========================================
+              NEXT BUTTON
+========================================== */
+
+#nextBtn{
+
+    display:block;
+
+    margin:35px auto 0;
+
+    padding:16px 42px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--pink),
+        var(--lav)
+    );
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.4s;
+
+}
+
+#nextBtn.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+#nextBtn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 20px rgba(255,209,102,.5);
+
+}
+
+/* ==========================================
+            SCROLLBAR
+========================================== */
+
+.card-back::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.card-back::-webkit-scrollbar-thumb{
+
+    background:#FFC3DF;
+
+    border-radius:20px;
+
+}
+/* ==========================================
+                MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .birthday-card{
+
+        width:min(92vw,360px);
+
+        height:min(78dvh,520px);
+
+    }
+
+    .card-front{
+
+        padding:28px;
+
+    }
+
+    .card-front h1{
+
+        font-size:3rem;
+
+    }
+
+    .card-front h2{
+
+        font-size:1.1rem;
+
+    }
+
+    .card-front p{
+
+        font-size:.95rem;
+
+    }
+
+    .card-back{
+
+        padding:24px;
+
+    }
+
+    .card-back h1{
+
+        font-size:2.4rem;
+
+    }
+
+    #typedText{
+
+        font-size:.95rem;
+
+        line-height:1.8;
+
+    }
+
+    .moon{
+
+        width:80px;
+        height:80px;
+
+        top:25px;
+        right:20px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .wrapper{
+
+        padding:15px;
+
+    }
+
+    .birthday-card{
+
+        width:92vw;
+
+        height:75dvh;
+
+        min-height:450px;
+
+    }
+
+    .card-front{
+
+        padding:22px;
+
+    }
+
+    .card-front h1{
+
+        font-size:2.6rem;
+
+    }
+
+    .card-front h2{
+
+        font-size:1rem;
+
+    }
+
+    .card-front p{
+
+        font-size:.9rem;
+
+    }
+
+    .card-back{
+
+        padding:20px;
+
+    }
+
+    .card-back h1{
+
+        font-size:2rem;
+
+        margin-bottom:18px;
+
+    }
+
+    #typedText{
+
+        font-size:.9rem;
+
+        min-height:200px;
+
+    }
+
+    #flipBtn,
+    #nextBtn{
+
+        width:100%;
+
+        max-width:220px;
+
+        padding:14px 20px;
+
+    }
+
+    .moon{
+
+        width:70px;
+        height:70px;
+
+    }
+
+}
